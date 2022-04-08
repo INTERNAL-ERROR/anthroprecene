@@ -4,7 +4,7 @@
 
 <Header />
 
-{import.meta.env.VITE_ENV_TYPE}
+{import.meta.env.VITE_ENV_TYPE} hi
 
 <a href = "/login">login!</a>
 <a href = "/blah">blah blah blah</a>
