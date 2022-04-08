@@ -17,7 +17,7 @@ export async function post ({request}) {
         await collection.insertOne({hello: "Netlify!"})
         this.data = await results.map(el => {
             console.log(el)
-            return {hello: el.hello, id: el._id}
+            return {hello: el.hello + " hi", id: el._id}
         })
         return this.data.toArray()
     }
