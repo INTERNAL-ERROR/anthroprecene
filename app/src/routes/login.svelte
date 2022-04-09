@@ -1,4 +1,4 @@
-<script context = "module">
+<script context = "module">/*
     export async function load({ params, fetch, session, stuff}) {
     const url = `/api/signup`;
     const response = await fetch(url, {
@@ -18,12 +18,14 @@
           }))
     }
     };
-  }
+  }*/
 </script>
 
 <script>
-    export let wow
+   // export let wow
 </script>
 
-<h1>hi {wow[0].hello}</h1>
+
+
+
 
