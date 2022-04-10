@@ -29,6 +29,6 @@ export async function post ({request}) {
     
 
     return {status: 200, body: {
-        wow: await run()
+        data: await run()
     }}
 }
