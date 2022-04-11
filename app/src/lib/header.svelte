@@ -1,9 +1,2 @@
-<script>
-    let name = ""
-</script>
-
-<input bind:value={name} />
-
-<nav>
-    <a sveltekit:prefetch href = {"about/" + name}>Home</a>
-</nav>
+<h1>The Anthropocene Reviewed</h1>
+<p>Written during 2020, John Green shares numerous essays on his life, common human experiences, and the pandemic in <strong>The Anthropocene Review</strong>. The Anthropocene is the current geologic era, and he ends each of his essays with a 1 to 5 star rating. Filled with detailed writing and setences that make you read it again, this is a fantastic nonfiction book. </p>

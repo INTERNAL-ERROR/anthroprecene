@@ -1,6 +1,6 @@
 <script>
      const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-     export let dataIn, label;
+     export let dataIn;
      
      import { onMount } from 'svelte';
       import Chart from 'chart.js/auto/auto.js';
@@ -36,7 +36,7 @@
                 {
                     label: 'My First Dataset',
                     data: datee,
-                    backgroundColor: ['#B0413E', '#C9533B', '#E5E000', '#36C77A', '#519872'],
+                    backgroundColor: ['#000000', '#B0413E', '#C9533B', '#E5E000', '#36C77A', '#519872'],
                     // hoverOffset: 4,
                     borderWidth: 0
                 }
@@ -64,7 +64,7 @@
                     },
                     title: {
                         display: true,
-                        text: label
+                        text: ""
                     }
                 }
             }

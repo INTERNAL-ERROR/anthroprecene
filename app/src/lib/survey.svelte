@@ -4,7 +4,17 @@
     import StarSelect from "$lib/starSelect.svelte";
     const qs = [
         {name: "Brushing your teeth", des: "Do you find brushing your teeth just part of your normal life? If so, what rating does something normal get?", rating: 0},
-        {name: "Auotmatic carwashes", des: "With mechanical whirring aglore, automatic carwashes are ", rating: 0}
+        {name: "Auotmatic carwashes", des: "With mechanical whirring aglore, automatic carwashes are machines of wonder. Are they useful? Beautiful? Ingenious?", rating: 0},
+        {name: "Programming", des: "40% banging your fingers on a keyboard, 40% banging your head on a table, 19% messing with things you don't know, 1% YES IT FINALLY WORKS! Wait why?"},
+        {name: "Morning Air", des: "The air is crisp and cool in the morning, and little wind disrupts the world's waking sounds."},
+        {name: "Monopoly", des: "Whether you play this with cuthroat trading or with alliances, Monopoly is a great way to spend an entire day playing boardgames. But how good is it?"},
+        {name: "Cats", des: "Choose carefully."},
+        {name: "Dogs", des: "Choose carefully."},
+        {name: "Trees that shed like Huskies", des: "Pinecones, neddles, leaves, small branches, large branches - all deposited onto your front yard for cleaning."},
+        {name: "Really long books", des: "As long as the book itself is good, more is better!"},
+        {name: "High Schoolers", des: "We're only 8th graders - we can still have bad opinions about foolish high schoolers - right?"},
+        {name: "Summer Break", des: "Do you love it? Get bored? Can't stand being home all day ong? Whatever you choose, remember you can sleep in!"},
+        {name: "Surveys With Too Many Questions", des: "..."}
     ]
     let results = [
         
@@ -77,13 +87,19 @@
     </button>
 {/if}
 {#if viewing}
-    <h1>Thanks for completing!</h1>
+    <h2>Thanks for completing!</h2>
+    <p>Below, you can view charts of all of the results!</p>
         
         {#each qs as q}
-            <p>you</p>
+            
             {#key otherResults}
-                <Chart dataIn = "{otherResults[q.name.replaceAll(' ', '$')]}" label = "o"/>
+                <h3>{q.name}</h3>
+                <Chart  dataIn = "{otherResults[q.name.replaceAll(' ', '$')]}" />
             {/key}
         {/each}
     
 {/if}
+
+<style>
+
+</style>
