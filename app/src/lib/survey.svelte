@@ -3,10 +3,13 @@
     import Chart from "$lib/chart.svelte";
     import StarSelect from "$lib/starSelect.svelte";
     const qs = [
-        {name: "Brushing your teeth", des: "Do you find brushing your teeth just part of your normal life? If so, what rating does something normal get?", rating: null},
-        {name: "Auotmatic carwashes", des: "With mechanical whirring aglore, automatic carwashes are ", rating: null}
+        {name: "Brushing your teeth", des: "Do you find brushing your teeth just part of your normal life? If so, what rating does something normal get?", rating: 0},
+        {name: "Auotmatic carwashes", des: "With mechanical whirring aglore, automatic carwashes are ", rating: 0}
     ]
     let results = [
+        
+    ];
+    let otherResults = [
         
     ];
     function update() {
@@ -27,15 +30,41 @@
             },
             body: JSON.stringify(results)
         })
-        alert(await res.text())
+        let rese = await res.json()
+        alert(rese)
         viewing = true;
+        otherResults = rese.data
+        otherResults = otherResults.map(d => {return {survey: d.survey}});
+        otherResults = otherResults.map(d => {
+            //console.log(d.survey)
+            return [...d.survey]
+        });
+        let temp = {};
+        otherResults.forEach(el1 => {
+            el1.forEach(el2 => {
+                let name = el2.name.replaceAll(" ", "$");
+                if(temp[name] === undefined){
+                    temp[name] = []; 
+                }
+
+                temp[name] = [...temp[name], el2.rating];
+                console.log("a | " + temp[name])
+            })
+        })
+        otherResults = temp;
+        console.log(otherResults)
+        
+        
+        //console.log(otherResults)
+        //console.log(otherResults)
+        
     }
 
                 
     
 </script>
 
-<Chart />
+
 
 {#if !viewing}
     {#each qs as q}
@@ -44,9 +73,17 @@
         <StarSelect bind:rating = {q.rating}/>
     {/each}
     <button on:click={submitSurvey}>
-        Submit Survey and View Results
+        Submi Survey and View Results
     </button>
 {/if}
 {#if viewing}
     <h1>Thanks for completing!</h1>
+        
+        {#each qs as q}
+            <p>you</p>
+            {#key otherResults}
+                <Chart dataIn = "{otherResults[q.name.replaceAll(' ', '$')]}" label = "o"/>
+            {/key}
+        {/each}
+    
 {/if}
