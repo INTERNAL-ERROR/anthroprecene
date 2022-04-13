@@ -4,6 +4,7 @@
     
 </script>
 
+<title>The Anthropocene Reviewed</title>
 
 
 

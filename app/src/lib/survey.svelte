@@ -1,5 +1,8 @@
 <script>
-    let viewing
+    import {onMount} from "svelte";
+    let viewing;
+    
+
     import Chart from "$lib/chart.svelte";
     import StarSelect from "$lib/starSelect.svelte";
     const qs = [
@@ -69,7 +72,7 @@
         otherResults = temp;
         console.log(otherResults)
         window.scrollTo(0,0)
-        
+        //localStorage.setItem("completed", true);
         //console.log(otherResults)
         //console.log(otherResults)
         
