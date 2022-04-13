@@ -1,8 +1,12 @@
-<h1><div>The Anthropocene Reviewed</div></h1>
+<h1><div>The Anthropocene Reviewed</div><h4>By John Green</h4></h1>
 <div class = "a">
-<p>Written during 2020, John Green shares numerous essays on his life, common human experiences, and the pandemic in <strong>The Anthropocene Review</strong>. The Anthropocene is the current geologic era, and he ends each of his essays with a 1 to 5 star rating. Filled with detailed writing and setences that make you read it again, this is a fantastic nonfiction book. Rating and reviewing things from Diet Dr. Pepper and Scratch n' Sniff stickers to Plague and Humanity's Temporal Range, he mixes serious with lighthearted fun, throwing in anecdotes or other stories.</p></div>
-<blockquote>When I was nine or ten, I saw a planetarium show at the Orland Science Center in which the host, with no apparent emotion in his voice, explianed that in about a billion years, the sun will be 10 percent more luminescent than it is now, likely resulting in the runaway evaporation of Earht's oceans. In about four billion years, Earth's surface will become so hot that it will melt. In seven or eight billion years, the sun will be a red giant star, and it will expand until eventually our planet will be sucked into it, and any remaining Earthly evidence of what we thought or said or did will be absorbed into a burning sphere of plasma. Thanks for visiting the Orland Science Center. The exit is to your left.</blockquote>
-<cite>By John Green</cite>
+<p class = "f">Written during 2020, John Green shares numerous essays on his life, common human experiences, and the pandemic in <strong>The Anthropocene Review</strong>. The Anthropocene is the current geologic era, and he ends each of his essays with a 1 to 5 star rating. Filled with detailed writing and setences that make you read it again, this is a fantastic nonfiction book. Rating and reviewing things from Diet Dr. Pepper and Scratch n' Sniff stickers to Plague and Humanity's Temporal Range, he mixes serious with lighthearted fun, throwing in anecdotes or other stories.</p></div>
+
+<blockquote>When I was nine or ten, I saw a planetarium show at the Orland Science Center in which the host, with no apparent emotion in his voice, explianed that in about a billion years, the sun will be 10 percent more luminescent than it is now, likely resulting in the runaway evaporation of Earht's oceans. In about four billion years, Earth's surface will become so hot that it will melt. In seven or eight billion years, the sun will be a red giant star, and it will expand until eventually our planet will be sucked into it, and any remaining Earthly evidence of what we thought or said or did will be absorbed into a burning sphere of plasma. Thanks for visiting the Orland Science Center. The exit is to your left.</blockquote><cite>By John Green</cite>
+
+
+<h2>Now, it's your turn!</h2>
+<p class = "s">Go through the following questions and consider it carefully. Then, rate it from 1 to 5 stars. Think about all facets of its existence. If it wasn't there, what would be its replacement? What side effects does it bring?</p>
 
 <style>
     h1 {
@@ -10,6 +14,7 @@
         text-align: center;
         width: 100vw;
         height: 30vh;
+        min-height: 100px;
         margin: 0;
         padding: 0;
         clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
@@ -17,6 +22,23 @@
         justify-content: center;
         align-items: center;
         font-family: 'Stint Ultra Expanded', cursive;
+        flex-wrap: wrap;
+    }
+
+
+    
+    h1 div {
+        width: 100vw;
+    }
+    h1 h4 {
+        width: 100vw;
+        font-size: 1.3rem;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     div.a {
@@ -29,7 +51,7 @@
         margin-top: -20vh;
         
     }
-    p {
+    p.f {
         width: 70%;
         height: 100%;
         border-radius: 20px;
@@ -39,6 +61,20 @@
         line-height: 1.4;
         background: url(https://ak.picdn.net/shutterstock/videos/1041247900/thumb/1.jpg);
 
+    }
+    h2 {
+        text-align: center;
+        color: black;
+        font-family: "Poppins", sans-serif;
+
+    }
+    p.s {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 70%;
+        color: black;
+        font-family: "Oswald", sans-serif;
     }
     blockquote {
         display: block;

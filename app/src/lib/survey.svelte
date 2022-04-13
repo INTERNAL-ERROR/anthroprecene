@@ -37,7 +37,7 @@
     //$: qs && update();
     async function submitSurvey () {
         update()
-        alert(JSON.stringify(results))
+        //alert(JSON.stringify(results))
         let res = await fetch("/api/surveySubmit", {
             method: "POST",
             headers: {
@@ -46,7 +46,7 @@
             body: JSON.stringify(results)
         })
         let rese = await res.json()
-        alert(rese)
+        //alert(rese)
         viewing = true;
         otherResults = rese.data
         otherResults = otherResults.map(d => {return {survey: d.survey}});
@@ -85,12 +85,15 @@
     <div class = "b">
         {#if !viewing}
             {#each qs as q}
+            <div class = "m">
                 <h3>{q.name}</h3>
                 <p>{q.des}</p>
                 <StarSelect bind:rating = {q.rating}/>
+            </div>
             {/each}
+            <br/>
             <button on:click={submitSurvey}>
-                Submi Survey and View Results
+                Submit Survey and View Results
             </button>
         {/if}
         {#if viewing}
@@ -100,8 +103,10 @@
                 {#each qs as q}
                     
                     {#key otherResults}
-                        <h3 style = "text-align: center;">{q.name}</h3>
-                        <Chart  dataIn = "{otherResults[q.name.replaceAll(' ', '$')]}" />
+                        <div class = "m">
+                            <h3 style = "text-align: center;">{q.name}</h3>
+                            <Chart  dataIn = "{otherResults[q.name.replaceAll(' ', '$')]}" />
+                        </div>
                     {/key}
                 {/each}
             
@@ -111,6 +116,9 @@
 <!---a-->
 </div>
 <style>
+    .m {
+        margin-bottom: 20px;
+    }
     .sidebar {
         display: grid;
         grid-template-areas: "a" "b" "a";
@@ -133,4 +141,5 @@
     .sidebar div.b {
         grid-area: "b";
     }
+
 </style>
