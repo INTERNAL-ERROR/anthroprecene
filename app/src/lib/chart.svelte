@@ -81,5 +81,7 @@
     canvas {
         max-width: 400px;
         max-height: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>
